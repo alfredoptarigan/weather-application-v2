@@ -1,65 +1,81 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Hero from "../components/Hero";
+import Navbar from "../components/Navbar";
+import Weather from "../components/Weather";
 
-export default function Home() {
+function Home() {
+  const [forecast, setForecast] = useState("");
+  const [location, setLocation] = useState("");
+
+  const getWeathers = async (e) => {
+    // Handle submit
+    e.preventDefault();
+    // API
+    try {
+      let response = await axios.get(
+        `https://api.weatherapi.com/v1/forecast.json?key=54086a9b00a34b81abd51752210301&q=${location}&days=3`
+      );
+      setForecast(response);
+    } catch (err) {
+      console.log(err.message);
+    }
+    // Empty State
+    setLocation("");
+  };
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+    <div className="bg-lightBlue-100 h-screen w-screen">
+      <div className="container mx-auto">
+        <Navbar />
+        <div className=" py-5 flex items-center justify-between">
+          <div className="mt-5">
+            <p className="text-2xl lg:text-5xl font-bold text-lightBlue-900">
+              Different kinds of <br /> weather inside <br /> of 24 hours
             </p>
-          </a>
+            <p className="leading-relaxed text-gray-400 text-sm lg:text-md md:text-md mt-3">
+              Various versions have evolved over the years, <br /> sometimes by
+              accident, somtimes on purposes <br />
+            </p>
+            <div className="inline-flex items-center justify-center">
+              <form onSubmit={getWeathers}>
+                <input
+                  type="text"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  className="bg-white p-5 mt-5 w-96 rounded 
+            focus:outline-none 
+            focus:ring focus:ring-blue-500 w-full lg:w-auto"
+                  placeholder="Search your cities here..."
+                />
+                <button
+                  type="submit"
+                  className="px-8 py-5 bg-gray-700 mt-5 
+          focus:outline-none text-white hover:bg-gray-800"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
+            <p className="text-blue-500 mt-5 font-medium text-sm lg:text-md">
+              Best way to know your city weather easily
+            </p>
+          </div>
+          <div className="mt-5">
+            <img
+              src="/illustration.svg"
+              alt="Weather Application Illustration"
+              width="500"
+              height="500"
+              class="hidden lg:flex"
+            />
+          </div>
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        {forecast !== "" ? <Weather forecast={forecast} /> : ""}
+      </div>
     </div>
-  )
+  );
 }
+
+export default Home;
