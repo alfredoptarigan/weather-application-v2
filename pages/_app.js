@@ -12,7 +12,9 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Component {...pageProps} />;
+      <div className="bg-lightBlue-100 ">
+        <Component {...pageProps} />;
+      </div>
     </>
   );
 }

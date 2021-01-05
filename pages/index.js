@@ -25,7 +25,7 @@ function Home() {
     setLocation("");
   };
   return (
-    <div className="bg-lightBlue-100 h-screen w-screen">
+    <div className="h-screen w-screen  ">
       <div className="container mx-auto">
         <Navbar />
         <div className=" py-5 flex items-center justify-between">
@@ -67,13 +67,12 @@ function Home() {
               alt="Weather Application Illustration"
               width="500"
               height="500"
-              class="hidden lg:flex"
+              className="hidden lg:flex"
             />
           </div>
         </div>
-
-        {forecast !== "" ? <Weather forecast={forecast} /> : ""}
       </div>
+      {forecast !== "" ? <Weather forecast={forecast} /> : ""}
     </div>
   );
 }
