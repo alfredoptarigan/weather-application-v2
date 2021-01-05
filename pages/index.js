@@ -1,7 +1,6 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Weather from "../components/Weather";
 
@@ -25,7 +24,7 @@ function Home() {
     setLocation("");
   };
   return (
-    <div className="h-screen w-screen  ">
+    <div className="h-screen ">
       <div className="container mx-auto">
         <Navbar />
         <div className=" py-5 flex items-center justify-between">
@@ -65,8 +64,8 @@ function Home() {
             <img
               src="/illustration.svg"
               alt="Weather Application Illustration"
-              width="500"
-              height="500"
+              width="400"
+              height="400"
               className="hidden lg:flex"
             />
           </div>
