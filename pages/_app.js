@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <div className="bg-lightBlue-100 w-screen ">
+      <div className="bg-lightBlue-100 w-screen min-h-screen ">
         <Component {...pageProps} />;
       </div>
     </>
