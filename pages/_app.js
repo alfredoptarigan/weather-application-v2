@@ -1,11 +1,19 @@
+import React, { useState, useEffect } from "react";
+
 import "../styles/tailwindcss.css";
 import Head from "next/head";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    AOS.init();
+    return () => {};
+  }, []);
   return (
     <>
       <Head>
-        <title>Weather &mdash; Application</title>
+        <title>All In One</title>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta

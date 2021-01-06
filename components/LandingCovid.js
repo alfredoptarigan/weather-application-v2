@@ -55,7 +55,11 @@ function LandingCovid() {
   }, getData(countries));
   return (
     <div>
-      <div className="py-5 flex justify-between mt-24 ">
+      <div
+        className="py-5 flex justify-between mt-24"
+        data-aos="fade-left"
+        data-aos-duration="2000"
+      >
         <div className="mt-24 hidden lg:flex">
           <img
             src="/remote-work-man.svg"
@@ -76,8 +80,12 @@ function LandingCovid() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center mt-8">
-        <p className="text-2xl font-medium text-lightBlue-500 mb-5">
+      <div
+        className="flex flex-col justify-center items-center mt-24"
+        data-aos="fade-right"
+        data-aos-duration="2000"
+      >
+        <p className="text-2xl font-medium text-lightBlue-500 mb-8">
           Find Your Countries Here
         </p>
         <select
@@ -98,7 +106,11 @@ function LandingCovid() {
         </select>
       </div>
       <div className="flex flex-col lg:flex-row justify-center items-center mt-8 w-full">
-        <div className=" bg-white  mt-4 mb-4 cursor-pointer shadow-lg transition-all duration-200 ease-in   w-full ml-2 mr-2 rounded l  ml-2 mr-2 hover:shadow-2xl">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="2000"
+          className=" bg-white  mt-4 mb-4 cursor-pointer shadow-lg transition-all duration-200 ease-in   w-full ml-2 mr-2 rounded l  ml-2 mr-2 hover:shadow-2xl"
+        >
           <div className="bg-green-500 w-full p-3 rounded-t"></div>
           <div className="p-5">
             <p className="text-lg text-green-500 font-medium">Recovered</p>
@@ -108,7 +120,11 @@ function LandingCovid() {
             </p>
           </div>
         </div>
-        <div className="bg-white  mt-4 mb-4 cursor-pointer shadow-lg transition-all duration-200 ease-in w-full ml-2 mr-2 rounded   ml-2 mr-2 hover:shadow-2xl">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className="bg-white  mt-4 mb-4 cursor-pointer shadow-lg transition-all duration-200 ease-in w-full ml-2 mr-2 rounded   ml-2 mr-2 hover:shadow-2xl"
+        >
           <div className="bg-yellow-500 w-full p-3 rounded-t"></div>
           <div className="p-5">
             <p className="text-lg text-yellow-500 font-medium">Confirmed</p>
@@ -118,7 +134,11 @@ function LandingCovid() {
             </p>
           </div>
         </div>
-        <div className="bg-white  mt-4 mb-4 cursor-pointer shadow-lg transition-all duration-200 ease-in   w-full ml-2 mr-2 rounded   ml-2 mr-2 hover:shadow-2xl">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="2000"
+          className="bg-white  mt-4 mb-4 cursor-pointer shadow-lg transition-all duration-200 ease-in   w-full ml-2 mr-2 rounded   ml-2 mr-2 hover:shadow-2xl"
+        >
           <div className="bg-red-500 w-full p-3 rounded-t"></div>
           <div className="p-5">
             <p className="text-lg text-red-500 font-medium">Deaths</p>

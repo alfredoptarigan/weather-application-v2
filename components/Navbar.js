@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="py-5 w-full">
       <div className="flex items-center justify-between">
         <a href="#" className="text-2xl font-bold text-lightBlue-900">
-          Weather Forecast
+          AIO
         </a>
       </div>
     </nav>

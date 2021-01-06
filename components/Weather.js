@@ -6,7 +6,11 @@ function Weather(props) {
   const currentTemp = forecast.data.current;
   console.log(dayForcest);
   return (
-    <div className=" container flex items-center justify-center mx-auto mt-5 lg:-mt-2">
+    <div
+      className=" container flex items-center justify-center mx-auto mt-5 lg:mt-8"
+      data-aos="fade-left"
+      data-aos-duration="2000"
+    >
       <div className="bg-white cursor-pointer shadow-lg transition-all duration-200 ease-in  p-5 w-1/2 rounded w-full lg:w-1/2 hover:shadow-2xl">
         <div className="flex justify-between items-center">
           <div className="flex">

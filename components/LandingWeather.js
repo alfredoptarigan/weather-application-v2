@@ -24,7 +24,7 @@ function LandingWeather() {
   return (
     <>
       <div className=" py-5 flex items-center justify-between">
-        <div className="mt-5">
+        <div className="mt-5" data-aos="fade-right" data-aos-duration="2000">
           <p className="text-2xl lg:text-5xl font-bold text-lightBlue-900">
             Different kinds of <br /> weather inside <br /> of 24 hours
           </p>
@@ -56,7 +56,7 @@ function LandingWeather() {
             Best way to know your city weather easily
           </p>
         </div>
-        <div className="mt-5">
+        <div className="mt-5" data-aos="fade-left" data-aos-duration="2000">
           <img
             src="/illustration.svg"
             alt="Weather Application Illustration"
